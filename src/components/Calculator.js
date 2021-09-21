@@ -1,25 +1,54 @@
+/* eslint-disable no-eval */
 import React, { useState } from 'react';
 
 function Calculator() {
   const [expression, setExpression] = useState('');
-  const [answer, setAnswer] = useState('0');
+  const [answer, setAnswer] = useState(0);
 
-  const display = (val) => {
-    setExpression((prev) => prev + val);
-    if (expression[expression.length - 1] === '=') {
-      if (/[0-9.]/.test(val)) {
-        setExpression(val);
+  function display(symbol) {
+    setExpression((prevValue) => {
+      if (
+        /[+*-/]/.test(symbol) &&
+        /[+*-/]/.test(prevValue[prevValue.length - 1])
+      ) {
+        let newValue;
+        if (/[-]/.test(symbol)) {
+          newValue = prevValue.slice(0, prevValue.length) + symbol;
+        } else {
+          let count = 0;
+          for (let i = 0; i < prevValue.length; i++) {
+            if (isNaN(+prevValue[i])) {
+              count++;
+            } else {
+              count = 0;
+            }
+          }
+          newValue = prevValue.slice(0, prevValue.length - count) + symbol;
+        }
+
+        setExpression(newValue);
       } else {
-        setExpression(answer + val);
+        if (prevValue) {
+          prevValue = prevValue + '';
+          let valArr = prevValue.split(/[+/*-]/g);
+          console.log('valArr ' + JSON.stringify(valArr));
+          let lastNumber = valArr[valArr.length - 1];
+          if (!isNaN(lastNumber) && /[.]/.test(lastNumber) && symbol === '.') {
+            console.log('symbol = empty ');
+            symbol = '';
+          }
+        }
+
+        setExpression(
+          (prevValue + symbol).replace(/^0/g, '').replace(/\.+/g, '.')
+        );
       }
-    }
-  };
+    });
+  }
 
   const calculate = () => {
-    // eslint-disable-next-line no-eval
-    const equal = eval(expression);
-    setAnswer(equal);
-    setExpression((prev) => prev + '=');
+    setAnswer(eval(expression));
+    setExpression(eval(expression));
   };
 
   const allClear = () => {
@@ -29,37 +58,38 @@ function Calculator() {
 
   const clear = () => {
     setExpression((prev) => {
+      setAnswer(0);
+      console.log(prev);
+      prev = prev + '';
       return prev
         .split('')
         .slice(0, prev.length - 1)
         .join('');
     });
-    setAnswer(0);
   };
 
   return (
     <div>
       <div className="row border border-dark">
-        <div className="col-12 text-end bg-dark text-warning py-4 px-2">
-          <div className="row">
-            <div className="col-12">
-              {expression.length === 0 ? '.' : expression}
+        <div className="col-12 d-flex justify-content-end bg-dark text-warning py-4 px-2">
+          <div className="row display">
+            <div id="display" class="col-11 text-end bg-dark">
+              {expression === '' ? 0 : expression}
             </div>
-            <div id="display" className="col-12 fs-4 text-light align-self-end">
-              {' '}
-              {answer}{' '}
+            <div className="col-11 text-end fs-4 text-light bg-dark">
+              {answer.length === 0 ? 0 : answer}
             </div>
           </div>
         </div>
         <div
-          id="all-clear"
+          id="clear"
           onClick={allClear}
           className="col-3 p-3 border border-dark text-center fs-3 bg-danger"
         >
           ac
         </div>
         <div
-          id="clear"
+          id="c"
           onClick={clear}
           className="col-3 p-3 border border-dark text-center fs-3 bg-danger"
         >
