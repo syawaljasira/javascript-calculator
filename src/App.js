@@ -1,12 +1,12 @@
 import Calculator from './components/Calculator';
-import './sass/App.scss';
+import './css/App.css';
 
 function App() {
   return (
     <div className="App">
       <div className="container">
-        <div className="row vh-100 justify-content-center align-items-center border border-dark">
-          <div className="col-10 border border-dark">
+        <div className="row vh-100 justify-content-center align-items-center">
+          <div className="col-10">
             <Calculator />
           </div>
         </div>
