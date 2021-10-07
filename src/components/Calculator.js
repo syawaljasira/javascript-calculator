@@ -85,126 +85,126 @@ function Calculator() {
           <div
             id="clear"
             onClick={allClear}
-            className="col-3 p-3 text-pink border-colored text-center fs-3 bg-gray"
+            className="pointer col-3 p-3 text-pink border-colored text-center fs-3 bg-gray"
           >
             ac
           </div>
           <div
             id="c"
             onClick={clear}
-            className="col-3 p-3 text-pink border-colored text-center fs-3 bg-gray"
+            className="pointer col-3 p-3 text-pink border-colored text-center fs-3 bg-gray"
           >
             c
           </div>
           <div
             id="divide"
             onClick={() => display('/')}
-            className="col-3 p-3 border-colored text-center fs-3 bg-gray"
+            className="pointer col-3 p-3 border-colored text-center fs-3 bg-gray"
           >
             /
           </div>
           <div
             id="multiply"
             onClick={() => display('*')}
-            className="col-3 p-3 border-colored text-center fs-3 bg-gray"
+            className="pointer col-3 p-3 border-colored text-center fs-3 bg-gray"
           >
             *
           </div>
           <div
             id="seven"
             onClick={() => display('7')}
-            className="col-3 p-3 border-colored text-center fs-3 bg-white"
+            className="pointer col-3 p-3 border-colored text-center fs-3 bg-white"
           >
             7
           </div>
           <div
             id="eight"
             onClick={() => display('8')}
-            className="col-3 p-3 border-colored text-center fs-3 bg-white"
+            className="pointer col-3 p-3 border-colored text-center fs-3 bg-white"
           >
             8
           </div>
           <div
             id="nine"
             onClick={() => display('9')}
-            className="col-3 p-3 border-colored text-center fs-3 bg-white"
+            className="pointer col-3 p-3 border-colored text-center fs-3 bg-white"
           >
             9
           </div>
           <div
             id="subtract"
             onClick={() => display('-')}
-            className="col-3 p-3 border-colored text-center fs-3 bg-gray"
+            className="pointer col-3 p-3 border-colored text-center fs-3 bg-gray"
           >
             -
           </div>
           <div
             id="four"
             onClick={() => display('4')}
-            className="col-3 p-3 border-colored text-center fs-3 bg-white"
+            className="pointer col-3 p-3 border-colored text-center fs-3 bg-white"
           >
             4
           </div>
           <div
             id="five"
             onClick={() => display('5')}
-            className="col-3 p-3 border-colored text-center fs-3 bg-white"
+            className="pointer col-3 p-3 border-colored text-center fs-3 bg-white"
           >
             5
           </div>
           <div
             id="six"
             onClick={() => display('6')}
-            className="col-3 p-3 border-colored text-center fs-3 bg-white"
+            className="pointer col-3 p-3 border-colored text-center fs-3 bg-white"
           >
             6
           </div>
           <div
             id="add"
             onClick={() => display('+')}
-            className="col-3 p-3 border-colored text-center fs-3 bg-gray"
+            className="pointer col-3 p-3 border-colored text-center fs-3 bg-gray"
           >
             +
           </div>
           <div
             id="one"
             onClick={() => display('1')}
-            className="col-3 p-3 border-colored text-center fs-3 bg-white"
+            className="pointer col-3 p-3 border-colored text-center fs-3 bg-white"
           >
             1
           </div>
           <div
             id="two"
             onClick={() => display('2')}
-            className="col-3 p-3 border-colored text-center fs-3 bg-white"
+            className="pointer col-3 p-3 border-colored text-center fs-3 bg-white"
           >
             2
           </div>
           <div
             id="three"
             onClick={() => display('3')}
-            className="col-3 p-3 border-colored text-center fs-3 bg-white"
+            className="pointer col-3 p-3 border-colored text-center fs-3 bg-white"
           >
             3
           </div>
           <div
             id="decimal"
             onClick={() => display('.')}
-            className="col-3 p-3 border-colored text-center fs-3 bg-gray"
+            className="pointer col-3 p-3 border-colored text-center fs-3 bg-gray"
           >
             .
           </div>
           <div
             id="zero"
             onClick={() => display('0')}
-            className="col-6 p-3 border-colored text-center fs-3 bg-gray"
+            className="pointer col-6 p-3 border-colored text-center fs-3 bg-gray"
           >
             0
           </div>
           <div
             id="equals"
             onClick={calculate}
-            className="col-6 p-3 border-colored text-center fs-3 bg-grad"
+            className="pointer col-6 p-3 border-colored text-center fs-3 bg-grad"
           >
             =
           </div>
