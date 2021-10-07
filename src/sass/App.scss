@@ -1,1 +1,39 @@
 @import '../../node_modules/bootstrap/scss/bootstrap.scss';
+
+$gradient-color: linear-gradient(
+  45deg,
+  rgba(225, 82, 138, 1) 22%,
+  rgba(255, 169, 66, 1) 75%
+);
+$pink-color: rgba(225, 82, 138, 80%);
+$gray-color: #eaeaea;
+$white-color: #f5f5f5;
+$text-gray: #35393c;
+
+.bg-grad {
+  background: $gradient-color;
+}
+
+.text-pink {
+  color: $pink-color;
+}
+
+.text-grays {
+  color: $text-gray;
+}
+
+.text-whites {
+  color: $white-color;
+}
+
+.bg-gray {
+  background-color: $gray-color;
+}
+
+.bg-white {
+  background-color: $white-color;
+}
+
+.border-colored {
+  border: 1px solid $gray-color;
+}

@@ -11113,5 +11113,30 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+.bg-grad {
+  background: linear-gradient(45deg, #e1528a 22%, #ffa942 75%);
+}
 
-/*# sourceMappingURL=App.css.map */
+.text-pink {
+  color: rgba(225, 82, 138, 0.8);
+}
+
+.text-grays {
+  color: #35393c;
+}
+
+.text-whites {
+  color: #f5f5f5;
+}
+
+.bg-gray {
+  background-color: #eaeaea;
+}
+
+.bg-white {
+  background-color: #f5f5f5;
+}
+
+.border-colored {
+  border: 1px solid #eaeaea;
+}
